@@ -23,6 +23,9 @@ export default class Product {
 	@Column()
 	categoryId: string;
 
+	@Column()
+	mainImage: string;
+
 	@Column('varchar', { array: true })
 	imageUrls: string[];
 
