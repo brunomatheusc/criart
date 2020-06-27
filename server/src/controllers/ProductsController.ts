@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-class ServicesController {
+class ProductsController {
 	public async create(req: Request, res: Response) {
 		const { name } = req.body;			
 	}
@@ -9,9 +9,9 @@ class ServicesController {
 
 	}
 
-	public async getServiceById(req: Request, res: Response) {
-		const { serviceId } = req.params;
+	public async getProductById(req: Request, res: Response) {
+		const { productId } = req.params;
 	}
 }
 
-export default new ServicesController;
+export default new ProductsController;
