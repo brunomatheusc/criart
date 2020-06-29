@@ -11,6 +11,7 @@ export class CreateProducts1592705772256 implements MigrationInterface {
 				{ name: 'weight', type: 'numeric' },
 				{ name: 'typeId', type: 'varchar' },
 				{ name: 'categoryId', type: 'varchar' },
+				{ name: 'mainImage', type: 'varchar' },
 				{ name: 'imageUrls', type: 'varchar array' },
 				{ name: 'createdAt', type: 'timestamp', default: 'now()' },
 				{ name: 'updatedAt', type: 'timestamp', default: 'now()' },

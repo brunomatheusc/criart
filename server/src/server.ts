@@ -1,3 +1,4 @@
+/*
 import 'reflect-metadata';
 
 import express, { Request, Response, NextFunction } from 'express';
@@ -20,8 +21,19 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 		res.status(err.statusCode).json({ status: 'error', message: err.message });
 	}
 
+	console.log(err);
+
 	return res.status(500).json({ status: 'error', message: 'Internal server error' });
 });
+
+app.listen(port, () => {
+    console.log(`Server started at ${port}`);
+});
+*/
+
+import app from './app';
+
+const port = process.env.PORT;
 
 app.listen(port, () => {
     console.log(`Server started at ${port}`);
