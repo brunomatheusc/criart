@@ -4,11 +4,11 @@ import UpdateUserAvatarService from './../services/UpdateUserAvatarService';
 
 class UsersController {
 	public async create(req: Request, res: Response) {
-		const { name, email, password } = req.body;
+		const { name, email, password, confirmPassword, avatar } = req.body;
 
 		const createUser = new CreateUserService();
 
-		const user = await createUser.execute({ name, email, password });
+		const user = await createUser.execute({ name, email, password, confirmPassword, avatar });
 
 		delete user.password;
 

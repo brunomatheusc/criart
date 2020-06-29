@@ -9,11 +9,18 @@ interface Request {
 	name: string;
 	email: string;
 	password: string;
+	confirmPassword: string;
+	avatar: string;
 }
 
 export default class CreateUserService {
-	public async execute({ name, email, password }: Request): Promise<User> {
+	public async execute(newUser: Request): Promise<User> {
 		const usersRepository = getCustomRepository(UsersRepository);
+		const { name, email, avatar, password, confirmPassword } = newUser;
+
+		if (password !== confirmPassword) {
+			throw new AppError('Senha e confirmação de senhas não conferem');
+		}
 
 		const checkUserExists = await usersRepository.findOne({ where: { email }});
 
@@ -23,7 +30,7 @@ export default class CreateUserService {
 
 		const hashedPassword = await hash(password, 8);
 
-		const user = await usersRepository.createUser({ name, email, password: hashedPassword });
+		const user = await usersRepository.createUser({ name, email, avatar, password: hashedPassword });
 
 		return user;
 	}

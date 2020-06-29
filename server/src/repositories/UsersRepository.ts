@@ -10,6 +10,7 @@ interface UserDTO {
 	name: string;
 	email: string;
 	password: string;
+	avatar: string;
 }
 
 interface AvatarDTO {
@@ -23,8 +24,8 @@ export default class UsersRepository extends Repository<User> {
 		return await this.findOne({ where: { id }});
 	}
 
-	public async createUser({ name, email, password }: UserDTO): Promise<User> {
-		const user = this.create({ name, email, password });
+	public async createUser(newUser: UserDTO): Promise<User> {
+		const user = this.create(newUser);
 
 		await this.save(user);
 
