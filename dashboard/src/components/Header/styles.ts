@@ -15,7 +15,7 @@ export const Container = styled.header`
 
 export const Title = styled.h1`
     padding-left: 20px;
-    font-size: 40px;
+    font-size: 24px;
     font-weight: bold;
     color: #000;
 `;
