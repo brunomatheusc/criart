@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import { Container } from './styles';
 import Sidebar from './../../components/Sidebar/index';
 import AddProducts from './../Products/Add/index';
+import ListProducts from './../Products/List/index';
 
 const Dashboard: FC = () => {
     return (
@@ -14,7 +15,8 @@ const Dashboard: FC = () => {
             <Container>
                 <Sidebar />
 
-                <AddProducts />    
+                {/* <AddProducts />     */}
+                <ListProducts />
             </Container>   
         </>
     );

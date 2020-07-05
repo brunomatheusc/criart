@@ -1,11 +1,42 @@
 import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { MdBusiness, MdInsertDriveFile } from 'react-icons/md';
 
-import { Container } from './styles';
+import { Container, List, ListItem } from './styles';
 
 const Sidebar: FC = () => {
     return (
         <>
             <Container>
+                <List>
+                    <ListItem>
+                        <Link to="/">
+                            <MdBusiness />
+                            <span>Produtos</span>
+                        </Link>
+                    </ListItem>
+
+                    <ListItem>
+                        <Link to="/">
+                            <MdInsertDriveFile />
+                            <span>Pedidos</span>
+                        </Link>
+                    </ListItem>
+
+                    <ListItem>
+                        <Link to="/">
+                            <MdInsertDriveFile />
+                            <span>Relatórios</span>
+                        </Link>
+                    </ListItem>
+
+                    <ListItem>
+                        <Link to="/">
+                            <MdInsertDriveFile />
+                            <span>Configurações</span>
+                        </Link>
+                    </ListItem>
+                </List>
             </Container>    
         </>
     );
