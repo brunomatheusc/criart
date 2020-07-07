@@ -8,6 +8,19 @@ export const Container = styled.div`
     width: 200px;
 `;
 
+export const Sidenav = styled.nav`
+    display: flex;
+    flex-direction: column;
+    background-color: #c00;
+    min-height: 100%;
+    width: 200px;
+`;
+
+export const Content = styled.div`
+    display: flex;
+    margin: 30px;
+`;
+
 export const List = styled.ul`
     margin-top: 20px;
     padding: 10px;

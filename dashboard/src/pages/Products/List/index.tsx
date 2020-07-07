@@ -6,7 +6,11 @@ import { Container, Title, Table } from './styles'
 const ListProducts: FC = () => {
     return (
         <>
+            {/* <Header /> */}
+
             <Container>
+                {/* <Sidebar /> */}
+
                 <Title>Lista de Produtos</Title>
 
                 <Table>

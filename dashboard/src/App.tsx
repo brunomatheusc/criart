@@ -7,7 +7,7 @@ export default function App() {
     return (
         <>
             <GlobalStyle />
-            <Routes />
+            <Routes />            
         </>
     );
 }

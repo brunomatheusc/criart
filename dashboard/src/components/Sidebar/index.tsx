@@ -10,14 +10,14 @@ const Sidebar: FC = () => {
             <Container>
                 <List>
                     <ListItem>
-                        <Link to="/">
+                        <Link to="/products">
                             <MdBusiness />
                             <span>Produtos</span>
                         </Link>
                     </ListItem>
 
                     <ListItem>
-                        <Link to="/">
+                        <Link to="/orders">
                             <MdInsertDriveFile />
                             <span>Pedidos</span>
                         </Link>
@@ -31,7 +31,7 @@ const Sidebar: FC = () => {
                     </ListItem>
 
                     <ListItem>
-                        <Link to="/">
+                        <Link to="/config">
                             <MdInsertDriveFile />
                             <span>Configurações</span>
                         </Link>
