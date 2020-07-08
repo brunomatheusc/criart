@@ -3,13 +3,13 @@ import { MdEdit, MdDelete, MdAdd } from 'react-icons/md';
 
 import { Container, Header, Button, Title, Table } from './styles'
 
-const ListProducts: FC = () => {
+const ListOrders: FC = () => {
     return (
         <>
             <Container>
                 <Header>
-                    <Title>Lista de Produtos</Title>
-                    <Button to="/products/new"><MdAdd />Novo Produto</Button>
+                    <Title>Lista de Pedidos</Title>
+                    <Button to="/orders/new"><MdAdd />Novo Pedido</Button>
                 </Header>
 
                 <Table>
@@ -63,4 +63,4 @@ const ListProducts: FC = () => {
     );
 };
 
-export default ListProducts;
+export default ListOrders;
