@@ -6,6 +6,7 @@ export class CreateProducts1592705772256 implements MigrationInterface {
 			name: 'products',
 			columns: [
 				{ name: 'id', type: 'uuid', isPrimary: true, generationStrategy: "uuid", default: 'uuid_generate_v4()' },
+				{ name: 'name', type: 'varchar' },
 				{ name: 'description', type: 'varchar' },
 				{ name: 'price', type: 'numeric' },
 				{ name: 'weight', type: 'numeric' },

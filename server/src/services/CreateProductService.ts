@@ -9,7 +9,7 @@ interface ProductDTO {
 	weight?: Number;
 	typeId: string;
 	categoryId: string;
-	mainImageUrl: string;
+	mainImage: string;
 	imageUrls?: string[];
 }
 
@@ -17,6 +17,8 @@ export default class CreateProductService {
 	public async execute(product: ProductDTO): Promise<Product> {
 		const productRepository = getCustomRepository(ProductRepository);
 
-		return await productRepository.createProduct(product);
+		const newProduct = await productRepository.createProduct(product);
+
+		return newProduct;
 	}
 }

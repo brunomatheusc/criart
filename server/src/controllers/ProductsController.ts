@@ -10,20 +10,20 @@ interface ProductRequest {
 	weight?: Number;
 	typeId: string;
 	categoryId: string;
-	mainImageUrl: string;
+	mainImage: string;
 	imageUrls?: string[];
 }
 
 class ProductsController {
 	public async create(req: Request, res: Response) {
 		const { 
-			name, description, price, weight, typeId, categoryId, mainImageUrl, imageUrls 
+			name, description, price, weight, typeId, categoryId, mainImage = "teste.com", imageUrls 
 		}: ProductRequest = req.body;
 		
 		const productService = new CreateProductService();
 
-		const product = productService.execute({ 
-			name, description, price, weight, typeId, categoryId, mainImageUrl, imageUrls 
+		const product = await productService.execute({ 
+			name, description, price, weight, typeId, categoryId,  mainImage: "teste.com", imageUrls 
 		});
 
 		return res.json({ product });

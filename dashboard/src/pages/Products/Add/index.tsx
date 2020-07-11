@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect, useRef, FormEvent } from 'react';
 
 import { Container, Form, Title, Input, Description, InputDiv, InputButton, Button } from './styles';
+import api from '../../../services/api';
 
 const AddProducts: FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -10,8 +11,10 @@ const AddProducts: FC = () => {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [weight, setWeight] = useState('');
-    const [type, setType] = useState('');
-    const [category, setCategory] = useState('');
+    const [typeId, setTypeId] = useState('');
+    const [categoryId, setCategoryId] = useState('');
+    const [mainImage, setMainImage] = useState('');
+    const [imageUrls, setImageUrls] = useState<string[]>([]);
 
     useEffect(() => {
         if (containerRef.current) {
@@ -23,9 +26,15 @@ const AddProducts: FC = () => {
         e.preventDefault();
 
         try {
-            
+            const response = await api.post('/products', {
+                name, description, price, weight, typeId, categoryId, mainImage, imageUrls 
+            });
+
+            if (response.status === 200) {
+                alert("Cadastrado com sucesso");
+            }
         } catch (error) {
-            
+            console.log(error);
         }
     }
 
@@ -42,8 +51,8 @@ const AddProducts: FC = () => {
                     <InputDiv>
                         <Input type="text" onChange={ (e) => { setPrice(e.target.value) } } value={ price } placeholder="Preço" />
                         <Input type="text" onChange={ (e) => { setWeight(e.target.value) } } value={ weight } placeholder="Peso" />
-                        <Input type="text" onChange={ (e) => { setType(e.target.value) } } value={ type } placeholder="Tipo" />
-                        <Input type="text" onChange={ (e) => { setCategory(e.target.value) } } value={ category } placeholder="Categoria" />
+                        <Input type="text" onChange={ (e) => { setTypeId(e.target.value) } } value={ typeId } placeholder="Tipo" />
+                        <Input type="text" onChange={ (e) => { setCategoryId(e.target.value) } } value={ categoryId } placeholder="Categoria" />
                     </InputDiv>
 
                     <InputButton>

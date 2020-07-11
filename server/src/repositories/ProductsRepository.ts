@@ -8,7 +8,7 @@ interface ProductDTO {
 	weight?: Number;
 	typeId: string;
 	categoryId: string;
-	mainImageUrl: string;
+	mainImage: string;
 	imageUrls?: string[];
 }
 

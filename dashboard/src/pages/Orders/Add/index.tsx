@@ -1,6 +1,7 @@
 import React, { FC, useState, useEffect, useRef, FormEvent } from 'react';
 
 import { Container, Form, Title, Input, InputDiv, InputButton, Button } from './styles';
+import api from '../../../services/api';
 
 const AddOrders: FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -22,7 +23,9 @@ const AddOrders: FC = () => {
         e.preventDefault();
 
         try {
-            
+            const response = await api.post('', {
+                
+            })
         } catch (error) {
             
         }
