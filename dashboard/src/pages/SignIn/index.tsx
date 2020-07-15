@@ -3,11 +3,14 @@ import { MdVisibility, MdVisibilityOff } from 'react-icons/md';
 
 import { Container, Title, Form, Input, Button, InputGroup } from './styles';
 import api from '../../services/api';
+import useAuth from './../../hook/Auth';
 
 const SignIn: FC = () => {
     const [email, setEmail] = useState('bmatheusc@gmail.com');
     const [password, setPassword] = useState('123456');
     const [isVisiblePassword, setIsVisiblePassword] = useState(false);
+
+    const { user, signIn } = useAuth();
 
     async function handleSignIn(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -16,7 +19,7 @@ const SignIn: FC = () => {
             const response = await api.post('/sessions', { email, password });
 
             if (response.status === 200) {
-
+                signIn({ email, password });
             }
         } catch (error) {
             const message = error.response.data.message;
