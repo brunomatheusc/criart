@@ -11,8 +11,8 @@ const Header: FC = () => {
                 <Title>Produtos</Title>
 
                 <UserInfo>
-                    <MdNotifications size={ 24 } color="#a1a1a1" />
-                    <MdAccountCircle size={ 24 } color="#a1a1a1" />
+                    <MdNotifications size={ 24 } color="#323C50" />
+                    <MdAccountCircle size={ 24 } color="#323C50" />
 
                     <h1>John Doe</h1>
                     <MdExpandMore />

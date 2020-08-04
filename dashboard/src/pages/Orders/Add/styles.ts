@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+interface InputProps {
+    width?: number;
+}
+
 interface IContainer {
     height: number;
 }
@@ -34,21 +38,43 @@ const inputBasis = css`
     width: 350px;
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<InputProps>`
     ${inputBasis};
     height: 32px;
+
+    ${({width}) => width && css`
+        width: ${width}px;
+    `}
 
     &::placeholder {
         font-size: 12px;
     }
+
+    & + input {
+        margin-top: 20px;
+    }
 `;
 
-export const Description = styled.textarea`
+export const Select = styled.select<InputProps>`
     ${inputBasis};
-    margin: 20px 0;
+    padding: 10px;
+    color: #757575;
+
+    ${({width}) => width && css`
+        width: ${width}px;
+    `}
 
     &::placeholder {
         font-size: 12px;
+    }
+
+    input + & {
+        margin-top: 20px;
+    }
+
+    option {
+        font-size: 12px;
+        color: #757575;
     }
 `;
 
@@ -74,6 +100,7 @@ export const InputButton = styled.div`
 export const Button = styled.button`
     height: 32px;
     width: 200px;
+    padding: 20px;
     text-align: center;
     border: 1px solid #000;
     border-radius: 5px;

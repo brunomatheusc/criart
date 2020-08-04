@@ -49,7 +49,7 @@ const AddProducts: FC = () => {
                     <Description placeholder="Descrição" onChange={ (e) => { setDescription(e.target.value) }} value={ description } />
 
                     <InputDiv>
-                        <Input type="text" onChange={ (e) => { setPrice(e.target.value) } } value={ price } placeholder="Preço" />
+                        <Input type="text" onChange={ (e) => { setPrice(e.target.value) } } value={ price } placeholder="Valor" />
                         <Input type="text" onChange={ (e) => { setWeight(e.target.value) } } value={ weight } placeholder="Peso" />
                         <Input type="text" onChange={ (e) => { setTypeId(e.target.value) } } value={ typeId } placeholder="Tipo" />
                         <Input type="text" onChange={ (e) => { setCategoryId(e.target.value) } } value={ categoryId } placeholder="Categoria" />

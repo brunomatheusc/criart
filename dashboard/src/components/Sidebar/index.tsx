@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { MdBusiness, MdInsertDriveFile } from 'react-icons/md';
+import { MdBusiness, MdInsertDriveFile, MdSettings, MdWork, MdShoppingCart, MdPeople } from 'react-icons/md';
 
 import { Container, List, ListItem } from './styles';
 
@@ -9,33 +9,12 @@ const Sidebar: FC = () => {
         <>
             <Container>
                 <List>
-                    <ListItem>
-                        <Link to="/products">
-                            <MdBusiness />
-                            <span>Produtos</span>
-                        </Link>
-                    </ListItem>
-
-                    <ListItem>
-                        <Link to="/orders">
-                            <MdInsertDriveFile />
-                            <span>Pedidos</span>
-                        </Link>
-                    </ListItem>
-
-                    <ListItem>
-                        <Link to="/">
-                            <MdInsertDriveFile />
-                            <span>Relatórios</span>
-                        </Link>
-                    </ListItem>
-
-                    <ListItem>
-                        <Link to="/config">
-                            <MdInsertDriveFile />
-                            <span>Configurações</span>
-                        </Link>
-                    </ListItem>
+                    <ListItem><Link to="/produtos"><MdBusiness /><span>Produtos</span></Link></ListItem>
+                    <ListItem><Link to="/pedidos"><MdInsertDriveFile /><span>Pedidos</span></Link></ListItem>
+                    <ListItem><Link to="/usuarios"><MdPeople /><span>Usuário</span></Link></ListItem>
+                    <ListItem><Link to="/compras"><MdShoppingCart /><span>Compras</span></Link></ListItem>
+                    <ListItem><Link to="/relatorios"><MdWork /><span>Relatórios</span></Link></ListItem>
+                    <ListItem><Link to="/configuracoes"><MdSettings /><span>Configurações</span></Link></ListItem>
                 </List>
             </Container>    
         </>

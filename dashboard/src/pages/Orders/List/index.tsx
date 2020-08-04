@@ -9,7 +9,7 @@ const ListOrders: FC = () => {
             <Container>
                 <Header>
                     <Title>Lista de Pedidos</Title>
-                    <Button to="/orders/new"><MdAdd />Novo Pedido</Button>
+                    <Button to="pedidos/novo"><MdAdd />Novo Pedido</Button>
                 </Header>
 
                 <Table>

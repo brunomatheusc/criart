@@ -14,10 +14,13 @@ const Routes: FC = () => {
             <Switch>
                 <Route path="/" exact component={ SignIn } isPrivate={ true } />
                 <Route path="/dashboard" component={ Dashboard } />
-                <Route path="/products" exact component={ ListProducts } />
-                <Route path="/products/new" component={ AddProducts } />
-                <Route path="/orders" exact component={ ListOrders } />
-                <Route path="/orders/new" component={ AddOrders } />
+                <Route path="/produtos" exact component={ ListProducts } />
+                <Route path="/produtos/novo" component={ AddProducts } />
+                <Route path="/pedidos" exact component={ ListOrders } />
+                <Route path="/pedidos/novo" component={ AddOrders } />
+                <Route path="/usuarios" exact component={ ListOrders } />
+                <Route path="/compras" exact component={ ListOrders } />
+                <Route path="/configuracoes" exact component={ ListOrders } />
             </Switch>        
         </BrowserRouter>
     );
