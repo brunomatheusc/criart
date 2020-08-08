@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import InputMask from 'react-input-mask';
 
 interface InputProps {
     width?: number;
@@ -49,9 +50,32 @@ export const Input = styled.input<InputProps>`
     &::placeholder {
         font-size: 12px;
     }
+`;
 
-    & + input {
-        margin-top: 20px;
+export const InputMasked = styled(InputMask)`
+    ${inputBasis};
+    height: 32px;
+
+    /* ${({width}) => width && css`
+        width: ${width}px;
+    `} */
+
+    &::placeholder {
+        font-size: 12px;
+    }
+`;
+
+export const InputGroup = styled.div`
+    position: relative;
+    margin-bottom: 20px;
+
+    button {
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        top: 6px;
+        right: 12px;
+        bottom: 0;
     }
 `;
 
@@ -59,6 +83,7 @@ export const Select = styled.select<InputProps>`
     ${inputBasis};
     padding: 10px;
     color: #757575;
+    margin-bottom: 20px;
 
     ${({width}) => width && css`
         width: ${width}px;
@@ -66,10 +91,6 @@ export const Select = styled.select<InputProps>`
 
     &::placeholder {
         font-size: 12px;
-    }
-
-    input + & {
-        margin-top: 20px;
     }
 
     option {
@@ -85,7 +106,7 @@ export const InputDiv = styled.div`
     justify-content: center;
 
     input {
-        margin: 20px 0;
+        margin-bottom: 20px;
         margin-right: 20px;
     }
 `;
@@ -100,7 +121,6 @@ export const InputButton = styled.div`
 export const Button = styled.button`
     height: 32px;
     width: 200px;
-    padding: 20px;
     text-align: center;
     border: 1px solid #000;
     border-radius: 5px;
